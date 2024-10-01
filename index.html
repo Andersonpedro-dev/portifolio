@@ -11,69 +11,80 @@
             padding: 0;
             background-color: #0b0c10;
             color: #c5c6c7;
-            line-height: 1.6;
         }
         header {
-            background: #1f2833;
-            padding: 20px;
             text-align: center;
+            padding: 50px 0;
+            background: linear-gradient(to bottom, #1f2833, #0b0c10);
         }
         h1 {
+            font-size: 3em;
             color: #66fcf1;
+            margin: 0;
         }
-        h2 {
-            color: #45a29e;
+        .view-button {
+            background-color: #45a29e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
         }
         .container {
             width: 80%;
             max-width: 1200px;
             margin: auto;
             padding: 20px;
+            text-align: center;
+        }
+        .project-section {
+            margin: 50px 0;
+            position: relative;
         }
         .project {
-            background: #1f2833;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
         }
-        .project a {
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h3 {
             color: #66fcf1;
-            text-decoration: none;
         }
-        .project a:hover {
-            text-decoration: underline;
-        }
-        footer {
+        .footer {
             text-align: center;
             padding: 20px;
             background: #1f2833;
-            position: relative;
-            bottom: 0;
-            width: 100%;
             color: #c5c6c7;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Meu Portfólio</h1>
-        <p>Analista de Sistemas | Apaixonado por Tecnologia | Criador de Soluções</p>
+        <h1>FUTURE TECHNOLOGY</h1>
+        <button class="view-button">VER PROJETOS</button>
     </header>
     <div class="container">
-        <h2>Projetos</h2>
-        <div class="project">
-            <h3>Projeto 1</h3>
-            <p>Descrição do projeto 1. <a href="link-do-projeto-1" target="_blank">Veja mais</a></p>
+        <h2>Meus Projetos</h2>
+        <div class="project-section">
+            <div class="project">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto 1. <a href="link-do-projeto-1" style="color: #66fcf1;">Veja mais</a></p>
+            </div>
+            <div class="project">
+                <h3>Projeto 2</h3>
+                <p>Descrição do projeto 2. <a href="link-do-projeto-2" style="color: #66fcf1;">Veja mais</a></p>
+            </div>
+            <!-- Adicione mais projetos conforme necessário -->
         </div>
-        <div class="project">
-            <h3>Projeto 2</h3>
-            <p>Descrição do projeto 2. <a href="link-do-projeto-2" target="_blank">Veja mais</a></p>
-        </div>
-        <!-- Adicione mais projetos conforme necessário -->
     </div>
-    <footer>
-        <p>Conecte-se comigo: <a href="link-do-seu-perfil-linkedin" target="_blank" style="color: #66fcf1;">LinkedIn</a> | <a href="link-do-seu-perfil-github" target="_blank" style="color: #66fcf1;">GitHub</a></p>
+    <footer class="footer">
+        <p>Conecte-se comigo: <a href="link-do-seu-perfil-linkedin" style="color: #66fcf1;">LinkedIn</a> | <a href="link-do-seu-perfil-github" style="color: #66fcf1;">GitHub</a></p>
     </footer>
 </body>
 </html>
