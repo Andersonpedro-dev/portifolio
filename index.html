@@ -6,33 +6,74 @@
     <title>Meu Portfólio</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
+            padding: 0;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+        }
+        header {
+            background: #1f2833;
             padding: 20px;
-            background-color: #f4f4f4;
+            text-align: center;
         }
         h1 {
-            color: #333;
+            color: #66fcf1;
+        }
+        h2 {
+            color: #45a29e;
+        }
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
         }
         .project {
-            background: #fff;
+            background: #1f2833;
             padding: 15px;
             margin: 10px 0;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .project a {
+            color: #66fcf1;
+            text-decoration: none;
+        }
+        .project a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #1f2833;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            color: #c5c6c7;
         }
     </style>
 </head>
 <body>
-    <h1>Meu Portfólio</h1>
-    <div class="project">
-        <h2>Projeto 1</h2>
-        <p>Descrição do projeto 1. <a href="link-do-projeto-1">Veja mais</a></p>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <p>Analista de Sistemas | Apaixonado por Tecnologia | Criador de Soluções</p>
+    </header>
+    <div class="container">
+        <h2>Projetos</h2>
+        <div class="project">
+            <h3>Projeto 1</h3>
+            <p>Descrição do projeto 1. <a href="link-do-projeto-1" target="_blank">Veja mais</a></p>
+        </div>
+        <div class="project">
+            <h3>Projeto 2</h3>
+            <p>Descrição do projeto 2. <a href="link-do-projeto-2" target="_blank">Veja mais</a></p>
+        </div>
+        <!-- Adicione mais projetos conforme necessário -->
     </div>
-    <div class="project">
-        <h2>Projeto 2</h2>
-        <p>Descrição do projeto 2. <a href="link-do-projeto-2">Veja mais</a></p>
-    </div>
-    <!-- Adicione mais projetos conforme necessário -->
+    <footer>
+        <p>Conecte-se comigo: <a href="link-do-seu-perfil-linkedin" target="_blank" style="color: #66fcf1;">LinkedIn</a> | <a href="link-do-seu-perfil-github" target="_blank" style="color: #66fcf1;">GitHub</a></p>
+    </footer>
 </body>
 </html>
