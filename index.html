@@ -9,27 +9,32 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0b0c10;
+            background: linear-gradient(to bottom, #0b0c10, #1f2833);
             color: #c5c6c7;
+            overflow-x: hidden;
         }
         header {
             text-align: center;
             padding: 50px 0;
-            background: linear-gradient(to bottom, #1f2833, #0b0c10);
         }
         h1 {
-            font-size: 3em;
+            font-size: 3.5em;
             color: #66fcf1;
             margin: 0;
         }
         .view-button {
             background-color: #45a29e;
             color: white;
-            padding: 10px 20px;
+            padding: 15px 30px;
             border: none;
             border-radius: 5px;
             font-size: 1.2em;
             cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .view-button:hover {
+            background-color: #66fcf1;
         }
         .container {
             width: 80%;
@@ -40,15 +45,19 @@
         }
         .project-section {
             margin: 50px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
             position: relative;
         }
         .project {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            margin: 20px 0;
+            margin: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
+            width: 300px; /* Ajuste para o tamanho desejado */
         }
         .project:hover {
             transform: translateY(-5px);
@@ -56,11 +65,32 @@
         .project h3 {
             color: #66fcf1;
         }
+        .project p {
+            color: #c5c6c7;
+        }
         .footer {
             text-align: center;
             padding: 20px;
             background: #1f2833;
             color: #c5c6c7;
+        }
+        /* Círculo central */
+        .circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px; /* Ajuste o tamanho do círculo */
+            height: 300px; /* Ajuste o tamanho do círculo */
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #66fcf1;
+            z-index: 1;
+            font-size: 1.5em;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -72,6 +102,7 @@
     <div class="container">
         <h2>Meus Projetos</h2>
         <div class="project-section">
+            <div class="circle">PROJETOS</div>
             <div class="project">
                 <h3>Projeto 1</h3>
                 <p>Descrição do projeto 1. <a href="link-do-projeto-1" style="color: #66fcf1;">Veja mais</a></p>
@@ -79,6 +110,10 @@
             <div class="project">
                 <h3>Projeto 2</h3>
                 <p>Descrição do projeto 2. <a href="link-do-projeto-2" style="color: #66fcf1;">Veja mais</a></p>
+            </div>
+            <div class="project">
+                <h3>Projeto 3</h3>
+                <p>Descrição do projeto 3. <a href="link-do-projeto-3" style="color: #66fcf1;">Veja mais</a></p>
             </div>
             <!-- Adicione mais projetos conforme necessário -->
         </div>
