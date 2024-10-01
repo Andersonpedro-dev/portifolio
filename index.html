@@ -15,12 +15,34 @@
         }
         header {
             text-align: center;
-            padding: 50px 0;
+            padding: 20px;
+            position: relative;
         }
         h1 {
             font-size: 3.5em;
             color: #66fcf1;
             margin: 0;
+        }
+        /* Menu superior */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-around;
+            width: 300px;
+        }
+        nav a {
+            color: #66fcf1;
+            text-decoration: none;
+            padding: 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
         }
         .view-button {
             background-color: #45a29e;
@@ -57,7 +79,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s;
-            width: 300px; /* Ajuste para o tamanho desejado */
+            width: 250px; /* Ajuste para o tamanho desejado */
         }
         .project:hover {
             transform: translateY(-5px);
@@ -85,6 +107,7 @@
             border-radius: 50%;
             background-color: rgba(0, 0, 0, 0.5);
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #66fcf1;
@@ -92,17 +115,39 @@
             font-size: 1.5em;
             font-weight: bold;
         }
+        /* Subtítulo e descrição dentro do círculo */
+        .circle h2 {
+            margin: 10px 0 5px;
+            font-size: 1.5em;
+        }
+        .circle p {
+            text-align: center;
+            padding: 0 10px;
+        }
+        /* Posicionamento dos projetos em círculo */
+        .project:nth-child(1) { top: 20%; left: 80%; transform: translate(-50%, -100%); } /* Superior Direito */
+        .project:nth-child(2) { top: 20%; left: 20%; transform: translate(-100%, -100%); } /* Superior Esquerdo */
+        .project:nth-child(3) { bottom: 20%; left: 80%; transform: translate(-50%, 100%); } /* Inferior Direito */
+        .project:nth-child(4) { bottom: 20%; left: 20%; transform: translate(-100%, 100%); } /* Inferior Esquerdo */
     </style>
 </head>
 <body>
     <header>
-        <h1>FUTURE TECHNOLOGY</h1>
+        <h1>ANDERSON SILVA</h1>
+        <nav>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#home">Home</a>
+            <a href="#contato">Contato</a>
+            <a href="#projetos">Projetos</a>
+        </nav>
         <button class="view-button">VER PROJETOS</button>
     </header>
     <div class="container">
-        <h2>Meus Projetos</h2>
         <div class="project-section">
-            <div class="circle">PROJETOS</div>
+            <div class="circle">
+                <h2>Meus Projetos</h2>
+                <p>Abaixo estão alguns dos projetos que venho desenvolvendo.</p>
+            </div>
             <div class="project">
                 <h3>Projeto 1</h3>
                 <p>Descrição do projeto 1. <a href="link-do-projeto-1" style="color: #66fcf1;">Veja mais</a></p>
@@ -115,7 +160,10 @@
                 <h3>Projeto 3</h3>
                 <p>Descrição do projeto 3. <a href="link-do-projeto-3" style="color: #66fcf1;">Veja mais</a></p>
             </div>
-            <!-- Adicione mais projetos conforme necessário -->
+            <div class="project">
+                <h3>Projeto 4</h3>
+                <p>Descrição do projeto 4. <a href="link-do-projeto-4" style="color: #66fcf1;">Veja mais</a></p>
+            </div>
         </div>
     </div>
     <footer class="footer">
