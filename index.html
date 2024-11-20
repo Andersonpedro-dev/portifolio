@@ -1,211 +1,458 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portfólio</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anderson Silva</title>
+
     <style>
-        body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #0b0c10, #1f2833);
-    color: #c5c6c7;
-    overflow-x: hidden;
-}
+      :root {
+        --neon-blue: #00f7ff;
+        --neon-purple: #bc13fe;
+        --dark-blue: #020b1c;
+        --space-blue: #0a1931;
+      }
 
-header {
-    text-align: center;
-    padding: 20px;
-    position: relative;
-}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: 'Raleway', sans-serif;
+        background-image: url('futuristic.jpg'); /* Caminho da imagem */
+        background-size: 100% 100%; /* Força a imagem a preencher toda a tela sem cortes */
+        background-position: center; /* Centraliza a imagem */
+        background-repeat: no-repeat; /* Impede a repetição da imagem */
+        color: #fff;
+        overflow-x: hidden; /* Impede o scroll horizontal */
+        margin: 0; /* Remove a margem padrão do body */
+        padding: 0; /* Remove o padding padrão do body */
+        height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+      }
 
-h1 {
-    font-size: 3.5em;
-    color: #66fcf1;
-    margin: 0;
-}
-
-nav {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-around;
-    width: 300px;
-}
-
-nav a {
-    color: #66fcf1;
-    text-decoration: none;
-    padding: 10px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-.view-button {
-    background-color: #45a29e;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background 0.3s;
-}
-
-.view-button:hover {
-    background-color: #66fcf1;
-}
-
-.container {
-    width: 80%;
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-}
-
-.project-section {
-    margin: 50px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    position: relative;
-}
-
-.project {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s;
-    width: 250px;
-}
-
-.project:hover {
-    transform: translateY(-5px);
-}
-
-.project h3 {
-    color: #66fcf1;
-}
-
-.project p {
-    color: #c5c6c7;
-}
-
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #1f2833;
-    color: #c5c6c7;
-}
-
-/* Círculo central */
-.circle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #66fcf1;
-    z-index: 1;
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.circle h2 {
-    margin: 10px 0 5px;
-    font-size: 1.5em;
-}
-
-.circle p {
-    text-align: center;
-    padding: 0 10px;
-}
-
-/* Posicionamento dos projetos em círculo */
-.project:nth-child(1) { top: 20%; left: 80%; transform: translate(-50%, -100%); }
-.project:nth-child(2) { top: 20%; left: 20%; transform: translate(-100%, -100%); }
-.project:nth-child(3) { bottom: 20%; left: 80%; transform: translate(-50%, 100%); }
-.project:nth-child(4) { bottom: 20%; left: 20%; transform: translate(-100%, 100%); }
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .project-section {
-        flex-direction: column;
-        align-items: center;
-    }
-    .project {
-        width: 80%;
-        margin: 10px 0;
-    }
-    .circle {
-        position: relative;
+      /* Navegação */
+      .nav {
+        position: fixed;
         top: 0;
         left: 0;
-        transform: translate(0, 0);
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-    }
-}
+        right: 0;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        background: rgba(2, 11, 28, 0.8);
+        backdrop-filter: blur(10px);
+        gap: 2rem;
+        z-index: 1000;
+      }
 
+      .nav a {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .nav a::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          45deg,
+          var(--neon-blue),
+          var(--neon-purple)
+        );
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .nav a:hover {
+        color: var(--neon-blue);
+      }
+
+      .nav a:hover::before {
+        transform: scaleX(1);
+      }
+      /* Área de Projetos */
+      .projects-container {
+        min-height: 100vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+
+      .center-circle {
+        width: 300px;
+        height: 300px;
+        background: var(--card-bg);
+        border: 2px solid var(--neon-blue);
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
+      }
+
+      .center-circle h2 {
+        color: var(--neon-blue);
+        margin-bottom: 1rem;
+      }
+
+      .project-card {
+        position: absolute;
+        width: 280px;
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 1.5rem;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        animation: float 10s infinite ease-in-out;
+      }
+
+      .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+      }
+
+      .project-card h3 {
+        color: var(--neon-blue);
+        margin-bottom: 1rem;
+      }
+
+      /* Posicionamento assimétrico dos cards */
+      #projeto1 {
+        top: 20%;
+        right: 25%;
+        animation-delay: 0s;
+      }
+
+      #projeto2 {
+        bottom: 18%;
+        right: 25%;
+        animation-delay: -2s;
+      }
+
+      #projeto3 {
+        top: 25%;
+        left: 25%;
+        animation-delay: -4s;
+      }
+
+      #projeto4 {
+        bottom: 20%;
+        left: 25%;
+        animation-delay: -6s;
+      }
+
+      /* Footer */
+      .footer {
+        background: rgba(
+          2,
+          11,
+          28,
+          0.8
+        ); /* Fundo translúcido para harmonizar com o tema */
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-top: 2px solid var(--neon-blue); /* Separador */
+      }
+
+      /* Estilo geral das seções */
+      .section {
+        padding: 4rem 2rem;
+        text-align: center;
+        background: var(--space-blue);
+        border-bottom: 2px solid var(--neon-blue);
+        position: relative;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        color: var(--neon-blue);
+        margin-bottom: 1.5rem;
+      }
+
+      .section p {
+        font-size: 1.1rem;
+        color: #ffffffcc;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .skills-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .skills-list li {
+        font-size: 1.1rem;
+        margin: 0.5rem 0;
+        color: #fff;
+      }
+
+      .skills-list span {
+        color: var(--neon-blue);
+        font-weight: bold;
+      }
+
+      /* Botão de contato */
+      .contact-button {
+        display: inline-block;
+        padding: 0.8rem 2rem;
+        background: linear-gradient(
+          45deg,
+          var(--neon-blue),
+          var(--neon-purple)
+        );
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 247, 255, 0.4);
+      }
+
+      .footer-content {
+        text-align: center;
+      }
+
+      .footer p {
+        color: var(--neon-blue);
+        margin-bottom: 1rem;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .footer-nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        position: relative;
+        transition: color 0.3s ease;
+      }
+
+      .footer-nav a::before {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(
+          45deg,
+          var(--neon-blue),
+          var(--neon-purple)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+
+      .footer-nav a:hover {
+        color: var(--neon-purple);
+      }
+
+      .footer-nav a:hover::before {
+        transform: scaleX(1);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(-10px, 15px);
+        }
+        50% {
+          transform: translate(10px, -15px);
+        }
+        75% {
+          transform: translate(15px, 10px);
+        }
+      }
+
+      /* Responsividade */
+      @media (max-width: 1200px) {
+        .project-card {
+          position: relative;
+          margin: 1rem auto;
+          top: auto !important;
+          left: auto !important;
+          right: auto !important;
+          bottom: auto !important;
+          transform: none !important;
+          animation: none;
+        }
+
+        .projects-container {
+          flex-direction: column;
+          padding-top: 5rem;
+        }
+
+        .center-circle {
+          position: relative;
+          margin: 2rem auto;
+          width: 250px;
+          height: 250px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .nav {
+          justify-content: center;
+          padding: 1rem;
+          background: rgba(2, 11, 28, 0.8);
+          backdrop-filter: blur(5px);
+        }
+      }
     </style>
-</head>
-<body>
-    <header>
-        <h1>ANDERSON SILVA</h1>
-        <nav>
-            <a href="#sobre">Sobre Mim</a>
-            <a href="#home">Home</a>
-            <a href="#contato">Contato</a>
-            <a href="#projetos">Projetos</a>
-        </nav>
-        <button class="view-button">VER PROJETOS</button>
-    </header>
-    <div class="container">
-        <div class="project-section">
-            <div class="circle">
-                <h2>Meus Projetos</h2>
-                <p>Abaixo estão alguns dos projetos que venho desenvolvendo.</p>
-            </div>
-            <div class="project">
-                <h3>Projeto 1</h3>
-                <p>Descrição do projeto 1. <a href="link-do-projeto-1" style="color: #66fcf1;">Veja mais</a></p>
-            </div>
-            <div class="project">
-                <h3>Projeto 2</h3>
-                <p>Descrição do projeto 2. <a href="link-do-projeto-2" style="color: #66fcf1;">Veja mais</a></p>
-            </div>
-            <div class="project">
-                <h3>Projeto 3</h3>
-                <p>Descrição do projeto 3. <a href="link-do-projeto-3" style="color: #66fcf1;">Veja mais</a></p>
-            </div>
-            <div class="project">
-                <h3>Projeto 4</h3>
-                <p>Descrição do projeto 4. <a href="link-do-projeto-4" style="color: #66fcf1;">Veja mais</a></p>
-            </div>
-        </div>
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+      <a href="#sobre">Sobre Mim</a>
+    </nav>
+
+    <div class="projects-container">
+      <div class="center-circle">
+        <h2>Anderson Silvas</h2>
+        <p>Explore meus projetos inovadores</p>
+      </div>
+
+      <div class="project-card" id="projeto1">
+        <h3>Projeto 1</h3>
+        <p>Descrição do projeto com tecnologias futuristas</p>
+      </div>
+
+      <div class="project-card" id="projeto2">
+        <h3>Projeto 2</h3>
+        <p>Descrição do projeto com tecnologias futuristas</p>
+      </div>
+
+      <div class="project-card" id="projeto3">
+        <h3>Projeto 3</h3>
+        <p>Descrição do projeto com tecnologias futuristas</p>
+      </div>
+
+      <div class="project-card" id="projeto4">
+        <h3>Projeto 4</h3>
+        <p>Descrição do projeto com tecnologias futuristas</p>
+      </div>
     </div>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="section">
+      <div class="section-content">
+        <h2>Sobre Mim</h2>
+        <p>
+          Olá! Meu nome é Anderson Silva, e sou um desenvolvedor web apaixonado
+          por tecnologia e inovação. Minha missão é transformar ideias em
+          experiências digitais impactantes, criando soluções que combinam
+          funcionalidade, estética e eficiência.
+        </p>
+        <p>
+          Com uma sólida experiência em design e desenvolvimento frontend,
+          domino tecnologias modernas como HTML5, CSS3, JavaScript e frameworks
+          como React. Além disso, estou sempre em busca de aprendizado
+          constante, explorando linguagens como Python para automação e análise
+          de dados.
+        </p>
+        <p>
+          Acredito que a programação é mais do que código — é uma ferramenta
+          poderosa para resolver problemas, conectar pessoas e construir o
+          futuro. Meu objetivo é contribuir com projetos que façam a diferença e
+          que inspirem criatividade e inovação.
+        </p>
+      </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="section">
+      <div class="section-content">
+        <h2>Minhas Habilidades</h2>
+        <ul class="skills-list">
+          <li><span>HTML5</span> - Domínio avançado</li>
+          <li><span>CSS3</span> - Criação de interfaces modernas</li>
+          <li><span>JavaScript</span> - Interatividade e dinamicidade</li>
+          <li><span>Python</span> - Automação e análise de dados</li>
+          <li><span>React</span> - Desenvolvimento frontend</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+      <div class="section-content">
+        <h2>Contato</h2>
+        <p>
+          Entre em contato comigo para discutir ideias, colaborações ou
+          oportunidades!
+        </p>
+        <a href="mailto:anderson.silva@example.com" class="contact-button"
+          >Fale Comigo</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <p>Conecte-se comigo: <a href="link-do-seu-perfil-linkedin" style="color: #66fcf1;">LinkedIn</a> | <a href="link-do-seu-perfil-github" style="color: #66fcf1;">GitHub</a></p>
+      <div class="footer-content">
+        <p>&copy; 2024 Anderson Silva. Todos os direitos reservados.</p>
+        <nav class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#contato">Contato</a>
+          <a href="#sobre">Sobre Mim</a>
+        </nav>
+      </div>
     </footer>
-</body>
+
+    <script>
+      // Efeito de movimento suave ao scroll
+      window.addEventListener('scroll', () => {
+        const cards = document.querySelectorAll('.project-card')
+        const scrolled = window.scrollY
+
+        cards.forEach((card, index) => {
+          const speed = 0.1 + index * 0.05
+          const yPos = -(scrolled * speed)
+          card.style.transform = `translateY(${yPos}px)`
+        })
+      })
+    </script>
+  </body>
 </html>
